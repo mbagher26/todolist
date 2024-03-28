@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Header from './Header'
 import Todo from './Todo'
+import './../styles/TodoList.css'
 
 export default class TodoList extends Component {
 
@@ -25,10 +26,12 @@ export default class TodoList extends Component {
             <>
                 <Header />
                 <form>
-                    <input type="text" className="todo-input" maxLength="40"/>
-                    <button className="todo-button" type="submit">
-                        <i className="fas fa-plus-square">+</i>
-                    </button>
+                    <div>
+                        <input type="text" className="todo-input" maxLength="40" />
+                        <button className="todo-button" type="submit">
+                            <i className="fas fa-plus-square">+</i>
+                        </button>
+                    </div>
                     <div className="select">
                         <select name="todos" className="filter-todo">
                             <option value="all">All</option>
@@ -40,7 +43,7 @@ export default class TodoList extends Component {
 
                 <div className="todo-container">
                     <ul className="todo-list">
-                            <Todo />
+                        <Todo />
                     </ul>
                 </div>
             </>
