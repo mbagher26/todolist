@@ -32,7 +32,7 @@ export default class TodoList extends Component {
         let newTodo ={
             id: this.state.todos.length +1,
             title: this.state.todoTitle,
-            complited: false
+            completed: false
         }
 
         this.setState({
@@ -48,7 +48,7 @@ export default class TodoList extends Component {
 
         for (let i = 0; i < Todos.length; i++){
             if (Todos[i].id === ID) {
-                Todos[i].complited = !Todos[i].complited
+                Todos[i].completed = !Todos[i].completed
             }
         }
         this.setState({
@@ -98,14 +98,14 @@ export default class TodoList extends Component {
                         ))}
 
                         {
-                            this.state.status === 'completed' && this.state.todos.filter((todo) => todo.complited === true).map((todo) => (
+                            this.state.status === 'completed' && this.state.todos.filter((todo) => todo.completed === true).map((todo) => (
                                 <Todo key={todo.id} {...todo} onEdit={this.editTodo} onRemove={this.removeTodo} />
 
                             ))
                         }
 
                         {
-                            this.state.status === 'uncompleted' && this.state.todos.filter((todo) => todo.complited === false).map((todo) => (
+                            this.state.status === 'uncompleted' && this.state.todos.filter((todo) => todo.completed === false).map((todo) => (
                                 <Todo key={todo.id} {...todo} onEdit={this.editTodo} onRemove={this.removeTodo} />
 
                             ))
