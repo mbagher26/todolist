@@ -38,6 +38,9 @@ export default class TodoList extends Component {
         this.setState({
             todos: [...this.state.todos, newTodo]
         })
+        this.setState({
+            todoTitle: ''
+        })
     }
     
     editTodo(ID) {
