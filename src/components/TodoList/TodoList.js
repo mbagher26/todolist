@@ -13,7 +13,7 @@ export default class TodoList extends Component {
             status: 'all'
         }
 
-        // this.addTodo = this.addTodo.bind(this)
+        this.addTodo = this.addTodo.bind(this)
         // this.removeTodo = this.removeTodo.bind(this)
         // this.editTodo = this.editTodo.bind(this)
         this.todoTitleHandler = this.todoTitleHandler.bind(this)
@@ -25,8 +25,22 @@ export default class TodoList extends Component {
         this.setState({
             todoTitle: event.target.value
         })
+        console.log(this.state.todoTitle);
     }
 
+    addTodo(event){
+        event.preventDefault();
+        let newTodo ={
+            id: this.state.todos.length +1,
+            title: this.state.todoTitle,
+            complited: false
+        }
+
+        this.setState({
+            todos: [...this.state.todos, newTodo]
+        })
+    }
+    
     render() {
         return (
             <>
@@ -34,7 +48,7 @@ export default class TodoList extends Component {
                 <form>
                     <div>
                         <input type="text" className="todo-input" maxLength="40" value={this.state.todoTitle} onChange={this.todoTitleHandler}/>
-                        <button className="todo-button" type="submit">
+                        <button className="todo-button" type="submit" onClick={this.addTodo}>
                             <i className="fas fa-plus-square">+</i>
                         </button>
                     </div>
@@ -49,7 +63,9 @@ export default class TodoList extends Component {
 
                 <div className="todo-container">
                     <ul className="todo-list">
-                        <Todo />
+                        {console.log(this.state.todos)}{ this.state.todos.map((todo) =>(
+                            <Todo {...todo}/>
+                        ))}
                     </ul>
                 </div>
             </>
