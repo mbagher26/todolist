@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { FaCheck } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
-
+import '../styles/Todo.css'
 
 export default class Todo extends Component {
 
