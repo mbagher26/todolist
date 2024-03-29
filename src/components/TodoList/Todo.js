@@ -18,6 +18,9 @@ export default class Todo extends Component {
         this.props.onEdit(id)
     }
 
+    deleteHandler(id) {
+        this.props.onRemove(id)
+    }
 
     render() {
         return (
@@ -31,7 +34,7 @@ export default class Todo extends Component {
                 </button>
 
                 <button className="trash-btn">
-                    <i className="fas fa-trash" aria-hidden="true"><MdDelete/></i>
+                    <i className="fas fa-trash" aria-hidden="true" onClick={this.deleteHandler.bind(this, this.props.id)}><MdDelete/></i>
                 </button>
             </div>
         )
