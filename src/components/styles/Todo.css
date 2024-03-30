@@ -7,7 +7,7 @@
     background-color: white;
 }
 
-.todo-item{
+.completed{
     opacity: 0.6;
     text-decoration: line-through;
 }
