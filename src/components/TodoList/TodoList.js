@@ -75,10 +75,10 @@ export default class TodoList extends Component {
         return (
             <>
                 <Header />
-                <form>
+                <form onSubmit={this.addTodo}>
                     <div>
                         <input type="text" className="todo-input" maxLength="40" value={this.state.todoTitle} onChange={this.todoTitleHandler}/>
-                        <button className="todo-button" type="submit" onClick={this.addTodo}>
+                        <button className="todo-button" type="submit">
                             <i className="fas fa-plus-square">+</i>
                         </button>
                     </div>
