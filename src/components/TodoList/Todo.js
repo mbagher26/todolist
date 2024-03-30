@@ -26,7 +26,7 @@ export default class Todo extends Component {
         return (
             // 'completed' class for completed todos
             <div className='todo' style={{ display: 'flex' }}>
-                <li className={this.props.completed ? "todo-item" : ''}>{this.props.title}</li>
+                <li className={`todo-item ${this.props.completed ? 'completed' : ''}`}>{this.props.title}</li>
 
                 <button className="check-btn" onClick={this.checkHandler.bind(this, this.props.id)}>
                     <i className="fas fa-check" aria-hidden="true"><FaCheck />
