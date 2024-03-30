@@ -27,7 +27,7 @@ export default class Todo extends Component {
             // 'completed' class for completed todos
             <div className='todo' style={{ display: 'flex' }}>
                 <li className={`todo-item ${this.props.completed ? 'completed' : ''}`}>{this.props.title}</li>
-
+                <div>
                 <button className="check-btn" onClick={this.checkHandler.bind(this, this.props.id)}>
                     <i className="fas fa-check" aria-hidden="true"><FaCheck />
                     </i>
@@ -36,6 +36,7 @@ export default class Todo extends Component {
                 <button className="trash-btn">
                     <i className="fas fa-trash" aria-hidden="true" onClick={this.deleteHandler.bind(this, this.props.id)}><MdDelete/></i>
                 </button>
+                </div>
             </div>
         )
     }
