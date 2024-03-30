@@ -1,13 +1,22 @@
 .todo{
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     margin: 5px;
     background-color: white;
+    height: 25px;
+    width: 400px;
+    border-radius: 2px;
 }
 
 .completed{
     opacity: 0.6;
     text-decoration: line-through;
+}
+
+
+.check-btn, .trash-btn{
+    width: 25px;
+    height: 100%;
 }
