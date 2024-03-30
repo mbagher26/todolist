@@ -98,14 +98,14 @@ export default class TodoList extends Component {
                         ))}
 
                         {
-                            this.state.status === 'completed' && this.state.todos.filter((todo) => todo.completed === true).map((todo) => (
+                            this.state.status === 'completed' && this.state.todos.filter((todo) => todo.completed).map((todo) => (
                                 <Todo key={todo.id} {...todo} onEdit={this.editTodo} onRemove={this.removeTodo} />
 
                             ))
                         }
 
                         {
-                            this.state.status === 'uncompleted' && this.state.todos.filter((todo) => todo.completed === false).map((todo) => (
+                            this.state.status === 'uncompleted' && this.state.todos.filter((todo) => !todo.completed).map((todo) => (
                                 <Todo key={todo.id} {...todo} onEdit={this.editTodo} onRemove={this.removeTodo} />
 
                             ))
