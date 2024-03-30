@@ -5,7 +5,7 @@ export default class Header extends Component {
         return (
 
             <header>
-                <h1>SabzLearn Todo List</h1>
+                <h1>React Todo List</h1>
             </header>
 
         )
