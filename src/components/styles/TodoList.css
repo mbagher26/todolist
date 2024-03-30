@@ -1,10 +1,34 @@
 form{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    border: 5px solid yellow;
 }
 
 .todo-list{
     list-style: none;
+}
+
+.todo-input{
+    width: 350px;
+    height: 20px;
+}
+
+.todo-button{
+    height: 25px;
+}
+
+.filter-todo{
+    width: 120px;
+    height: 25px;
+}
+
+.todo-list{
+    background-color: yellow;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
 }
